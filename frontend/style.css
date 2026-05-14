@@ -1,0 +1,230 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #747474;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.app-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.top-header {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.logo {
+    width: 350px;
+    height: auto;
+    display: block;
+    margin: 0 auto 5px auto;
+}
+
+.free {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.summarybox {
+    flex: 1;
+    margin: 0 40px 20px 40px;
+    background: #747474;
+    color: white;
+    border-style: dotted;
+    border-color: rgb(3, 61, 161);
+    border-radius: 16px;
+    padding: 25px;
+    overflow-y: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+}
+
+#summaryOutput {
+    white-space: pre-wrap;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+.bottom-bar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #747474;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 1px 20px rgba(0,0,0,0.08);
+}
+
+textarea { 
+    flex: 1;
+    min-height: 60px;
+    max-height: 250px;
+    border: 2px solid rgb(3, 61, 161);
+    border-radius: 12px;
+    padding: 10px;
+    font-size: 15px;
+    resize: none;
+    outline: none;
+    overflow-y: hidden; 
+    overflow-x: hidden;
+    height: auto; 
+    box-shadow: 0 4px 12px rgba(3, 61, 161, 0.12);
+}
+
+textarea:focus {
+    border-color: #2980b9;
+}
+
+.upload-btn, .summarize-btn {
+    background: rgb(3, 61, 161);
+    color: white;
+    border: none;
+    padding: 14px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.upload-btn:hover, .summarize-btn:hover {
+    background: #2980b9;
+}
+
+#fileText {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+.action-btn {
+    background: rgb(3, 61, 161);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+    width: fit-content;
+    height: 42px;
+    align-self: flex-start;
+    width: fit-content;
+}
+
+.action-btn:hover{
+     background: #2980b9;
+}
+
+#empty {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 12px;
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+}
+
+#empty.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+
+#toast {
+    visibility: hidden;
+    min-width: 200px;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    padding: 12px;
+    position: fixed;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s, bottom 0.3s;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
+
+#loading {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.loader-dots span {
+    width: 12px;
+    height: 12px;
+    background: rgb(3, 61, 161);
+    border-radius: 50%;
+    animation: bounce 1.2s infinite ease-in-out;
+}
+
+.loader-dots span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader-dots span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+    0%, 80%, 100% {
+        transform: scale(0);
+        opacity: 0.3;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+#loading p {
+    margin-top: 12px;
+    font-family: Arial;
+    color: white;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
