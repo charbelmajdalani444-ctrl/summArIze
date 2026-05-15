@@ -155,4 +155,4 @@ def summarize():
 
 
 if __name__ == "__main__":
-    app.run(debug=True) bterjaa btektub
+    app.run(debug=True)
