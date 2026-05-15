@@ -155,4 +155,4 @@ def summarize():
 
 
 if __name__ == "__main__":
-    app.run(debug=True) hhhh ktob hayala shi
+    app.run(debug=True)
